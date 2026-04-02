@@ -7,6 +7,7 @@ def carregar_saldo():
     if not arquivoSaldo in os.listdir():
         with open(arquivoSaldo, 'w') as f:
             f.write('0')
+        return 0.0
     else:
         with open(arquivoSaldo, 'r') as f:
             return float(f.read())
@@ -33,6 +34,7 @@ def mostrar_historico():
             time.sleep(1)
             print("\n=== HISTÓRICO DE TRANSAÇÕES ===")
             print(f.read())
+            print("===============================")
     else:
         print("Nenhuma transação realizada ainda.")
 
@@ -53,6 +55,7 @@ def menu():
             time.sleep(1)
             print("\n=== SALDO ATUAL ===")
             print(f"Saldo atual: R${saldo:.2f}")
+            print("==================")
             time.sleep(1)
         elif escolha == '2':
             valor = float(input("Digite o valor a depositar: "))
